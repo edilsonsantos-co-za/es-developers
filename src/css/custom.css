@@ -1,0 +1,30 @@
+:root {
+  --ifm-color-primary: #4f8cff;
+  --ifm-color-primary-dark: #2874ff;
+  --ifm-color-primary-darker: #1468ff;
+  --ifm-color-primary-darkest: #0053e0;
+  --ifm-color-primary-light: #76a4ff;
+  --ifm-color-primary-lighter: #8ab1ff;
+  --ifm-color-primary-lightest: #b4ceff;
+  --ifm-background-color: #090b10;
+  --ifm-background-surface-color: #121620;
+  --ifm-navbar-background-color: #121620;
+  --ifm-footer-background-color: #121620;
+  --ifm-font-family-base: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.hero {
+  --ifm-hero-background-color: #090b10;
+  --ifm-hero-text-color: #e8edf6;
+  background:
+    radial-gradient(ellipse at 80% 10%, rgb(37 99 235 / 22%), transparent 48%),
+    var(--ifm-hero-background-color);
+}
+
+.hero__subtitle {
+  color: #aab5c8;
+}
+
+.footer {
+  border-top: 1px solid #232a38;
+}

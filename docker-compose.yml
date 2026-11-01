@@ -1,0 +1,11 @@
+services:
+  developers:
+    container_name: es-developers
+    build: .
+    restart: unless-stopped
+    networks:
+      - milkyway
+
+networks:
+  milkyway:
+    external: true
