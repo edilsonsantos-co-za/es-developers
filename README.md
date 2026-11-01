@@ -5,7 +5,7 @@ internal workspace documentation and private journal content are not included.
 
 ## Local development
 
-Requirements: Node.js 20.20.x or newer and npm 10 or newer.
+Requirements: Node.js 22 and npm 10 or newer.
 
 ```bash
 npm ci
@@ -16,8 +16,23 @@ npm run start
 the docs and serves them with Nginx; `docker-compose.yml` attaches the service to the external `milkyway`
 network and expects a separately configured reverse proxy.
 
-Production deployment, DNS/TLS routing and an automated deployment workflow have not been verified or configured.
-The configured hostname is a target, not a live-service claim.
+## Hosted deployment
+
+The curated site is live at **https://developers.edilsonsantos.co.za/**. All nine sitemap pages were checked over
+HTTPS on 2026-11-02. The production image serves static files with Nginx 1.28; Node 22 is used only during build.
+GitHub Actions validates `main`/pull requests and uploads the built site as an artifact.
+
+Deployment is currently manual, not triggered by CI. Ship the reviewed committed source to your host, then run:
+
+```bash
+docker compose build developers
+docker compose up -d developers
+docker exec es-developers wget -qO- http://127.0.0.1/
+```
+
+The hosted instance uses its own HTTPS reverse-proxy host and certificate on the external `milkyway` network.
+Preserve unrelated apps and volumes. An authenticated automatic-deployment workflow remains a follow-up; do not
+copy deployment credentials into documentation or source.
 
 ## Dependency baseline
 
