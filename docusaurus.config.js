@@ -38,6 +38,7 @@ const config = {
         { to: '/apps/es-blog', label: 'Blog', position: 'left' },
         { to: '/guides/development', label: 'Guides', position: 'left' },
         { to: '/roadmap', label: 'Roadmap', position: 'left' },
+        { href: 'https://buymeacoffee.com/edilsonsantos', label: '☕ Buy me a coffee', position: 'right', className: 'navbar-coffee', 'aria-label': 'Buy me a coffee' },
       ],
     },
     footer: {
@@ -55,6 +56,12 @@ const config = {
           items: [
             { label: 'Development guide', to: '/guides/development' },
             { label: 'Publishing and releases', to: '/guides/publishing-and-releases' },
+          ],
+        },
+        {
+          title: 'Support',
+          items: [
+            { label: '☕ Buy me a coffee', href: 'https://buymeacoffee.com/edilsonsantos' },
           ],
         },
       ],

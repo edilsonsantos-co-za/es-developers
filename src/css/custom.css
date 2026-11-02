@@ -6,11 +6,15 @@
   --ifm-color-primary-light: #76a4ff;
   --ifm-color-primary-lighter: #8ab1ff;
   --ifm-color-primary-lightest: #b4ceff;
+  --ifm-font-family-base: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Dark surfaces only in dark mode: in light mode they put the light theme's dark text on a dark page. */
+html[data-theme='dark'] {
   --ifm-background-color: #090b10;
   --ifm-background-surface-color: #121620;
   --ifm-navbar-background-color: #121620;
   --ifm-footer-background-color: #121620;
-  --ifm-font-family-base: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 .hero {
@@ -27,4 +31,24 @@
 
 .footer {
   border-top: 1px solid #232a38;
+}
+
+.navbar-coffee {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: #ffdd00;
+  color: #0d0c22;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.navbar-coffee:hover {
+  color: #0d0c22;
+  filter: brightness(0.96);
+}
+
+/* Docusaurus appends an external-link icon to href items; the button reads fine without it. */
+.navbar-coffee svg {
+  display: none;
 }
