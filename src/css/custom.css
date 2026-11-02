@@ -6,27 +6,89 @@
   --ifm-color-primary-light: #76a4ff;
   --ifm-color-primary-lighter: #8ab1ff;
   --ifm-color-primary-lightest: #b4ceff;
-  --ifm-font-family-base: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ifm-font-family-base: Manrope, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ifm-font-family-monospace: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-/* Dark surfaces only in dark mode: in light mode they put the light theme's dark text on a dark page. */
+/* Dark mode uses the shared ES "Atlas" palette (same tokens as es-blog, es-portfolio, es-journal, the store). */
 html[data-theme='dark'] {
-  --ifm-background-color: #090b10;
-  --ifm-background-surface-color: #121620;
-  --ifm-navbar-background-color: #121620;
-  --ifm-footer-background-color: #121620;
+  --es-bg: #090b10;
+  --es-card: #121620;
+  --es-card-2: #181d29;
+  --es-text: #e8edf6;
+  --es-muted: #8f9ab0;
+  --es-line: #232a38;
+  --es-accent: #3b82f6;
+  --es-accent-2: #93c5fd;
+  --es-accent-soft: #15213a;
+
+  --ifm-color-primary: #3b82f6;
+  --ifm-color-primary-dark: #2563eb;
+  --ifm-color-primary-darker: #1d4ed8;
+  --ifm-color-primary-darkest: #1e40af;
+  --ifm-color-primary-light: #60a5fa;
+  --ifm-color-primary-lighter: #93c5fd;
+  --ifm-color-primary-lightest: #bfdbfe;
+
+  --ifm-background-color: var(--es-bg);
+  --ifm-background-surface-color: var(--es-card);
+  --ifm-navbar-background-color: var(--es-card);
+  --ifm-footer-background-color: var(--es-card);
+  --ifm-font-color-base: var(--es-text);
+  --ifm-heading-color: var(--es-text);
+  --ifm-color-content: var(--es-text);
+  --ifm-color-content-secondary: var(--es-muted);
+  --ifm-toc-border-color: var(--es-line);
+  --ifm-hr-background-color: var(--es-line);
+  --ifm-table-border-color: var(--es-line);
+  --ifm-table-stripe-background: var(--es-card);
+  --ifm-color-emphasis-200: var(--es-line);
+  --ifm-color-emphasis-300: var(--es-line);
+  --ifm-code-background: var(--es-card-2);
+  --ifm-pre-background: var(--es-card);
+  --ifm-card-background-color: var(--es-card);
+  --ifm-menu-color: var(--es-muted);
+  --ifm-menu-color-background-active: var(--es-accent-soft);
+  --ifm-menu-color-background-hover: var(--es-card-2);
+  --ifm-dropdown-background-color: var(--es-card);
+  --ifm-navbar-search-input-background-color: var(--es-card-2);
+  --docusaurus-highlighted-code-line-bg: var(--es-accent-soft);
+  --docusaurus-collapse-button-bg: transparent;
+  --docusaurus-collapse-button-bg-hover: var(--es-card-2);
+}
+
+/* footer.style 'dark' sets its own grey (#303846) on .footer--dark, overriding the html-level variable. */
+html[data-theme='dark'] .footer--dark {
+  --ifm-footer-background-color: var(--es-card);
+  --ifm-footer-color: var(--es-muted);
+  --ifm-footer-link-color: var(--es-text);
+  --ifm-footer-title-color: var(--es-text);
+}
+
+html[data-theme='dark'] .navbar {
+  border-bottom: 1px solid var(--es-line);
+  box-shadow: none;
+}
+
+html[data-theme='dark'] .theme-doc-sidebar-container {
+  border-right-color: var(--es-line) !important;
+}
+
+html[data-theme='dark'] pre[class*='language-'],
+html[data-theme='dark'] .prism-code {
+  background-color: var(--es-card) !important;
 }
 
 .hero {
   --ifm-hero-background-color: #090b10;
   --ifm-hero-text-color: #e8edf6;
   background:
-    radial-gradient(ellipse at 80% 10%, rgb(37 99 235 / 22%), transparent 48%),
+    radial-gradient(ellipse at 80% 10%, rgb(59 130 246 / 22%), transparent 48%),
     var(--ifm-hero-background-color);
 }
 
 .hero__subtitle {
-  color: #aab5c8;
+  color: #8f9ab0;
 }
 
 .footer {

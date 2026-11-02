@@ -29,6 +29,10 @@ const config = {
     ],
   ],
 
+  stylesheets: [
+    'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Manrope:wght@500;600;700;800&display=swap',
+  ],
+
   themeConfig: {
     navbar: {
       title: 'ES Developers',
@@ -73,7 +77,7 @@ const config = {
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
   },
 };
