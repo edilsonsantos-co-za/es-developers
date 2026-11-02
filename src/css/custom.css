@@ -114,3 +114,23 @@ html[data-theme='dark'] .prism-code {
 .navbar-coffee svg {
   display: none;
 }
+
+/* ES app launcher: sits in the navbar like in the other ES apps. */
+.navbar-es-apps {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 4px;
+}
+
+
+/* Docusaurus hides navbar items on narrow screens; keep the launcher in the bar like the other ES apps, and
+   leave it out of the mobile sidebar menu. */
+@media (max-width: 996px) {
+  .navbar .navbar__items--right .navbar-es-apps {
+    display: inline-flex;
+  }
+}
+
+.navbar-sidebar .navbar-es-apps {
+  display: none;
+}

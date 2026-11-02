@@ -33,6 +33,9 @@ const config = {
     'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Manrope:wght@500;600;700;800&display=swap',
   ],
 
+  // The shared ES app launcher (<es-apps>); copy of es-marketplace/store/assets/es-apps.js
+  scripts: [{ src: '/es-apps.js', defer: true }],
+
   themeConfig: {
     navbar: {
       title: 'ES Developers',
@@ -42,6 +45,7 @@ const config = {
         { to: '/apps/es-blog', label: 'Blog', position: 'left' },
         { to: '/guides/development', label: 'Guides', position: 'left' },
         { to: '/roadmap', label: 'Roadmap', position: 'left' },
+        { type: 'html', position: 'right', className: 'navbar-es-apps', value: '<es-apps current="developers"></es-apps>' },
         { href: 'https://buymeacoffee.com/edilsonsantos', label: '☕ Buy me a coffee', position: 'right', className: 'navbar-coffee', 'aria-label': 'Buy me a coffee' },
       ],
     },
@@ -76,7 +80,7 @@ const config = {
     },
     colorMode: {
       defaultMode: 'dark',
-      disableSwitch: false,
+      disableSwitch: true,
       respectPrefersColorScheme: false,
     },
   },
