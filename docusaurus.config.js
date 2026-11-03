@@ -80,7 +80,7 @@ const config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} Edilson Santos · Backend developer by day. The ES apps are my after-hours side project.`,
+      copyright: `© ${new Date().getFullYear()} Edilson Santos · Full-time professional software engineer, building cool projects in my spare time.`,
     },
     prism: {
       additionalLanguages: ['bash', 'docker'],
