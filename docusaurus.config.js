@@ -45,35 +45,42 @@ const config = {
         { to: '/apps/es-blog', label: 'Blog', position: 'left' },
         { to: '/guides/development', label: 'Guides', position: 'left' },
         { to: '/roadmap', label: 'Roadmap', position: 'left' },
-        { type: 'html', position: 'right', className: 'navbar-es-apps', value: '<es-apps current="developers"></es-apps>' },
+        // Same order as every ES app: Buy me a coffee, then the launcher
         { href: 'https://buymeacoffee.com/edilsonsantos', label: '☕ Buy me a coffee', position: 'right', className: 'navbar-coffee', 'aria-label': 'Buy me a coffee' },
+        { type: 'html', position: 'right', className: 'navbar-es-apps', value: '<es-apps current="developers"></es-apps>' },
       ],
     },
+    // Same three columns as every ES app's footer: this app, the ES apps, connect
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'ES apps',
-          items: [
-            { label: 'ES Portfolio source (access may be required)', href: 'https://github.com/edilsonsantos-co-za/es-portfolio' },
-            { label: 'ES Blog source (access may be required)', href: 'https://github.com/edilsonsantos-co-za/es-blog' },
-          ],
-        },
-        {
           title: 'Developers',
           items: [
+            { label: 'Overview', to: '/' },
             { label: 'Development guide', to: '/guides/development' },
             { label: 'Publishing and releases', to: '/guides/publishing-and-releases' },
+            { label: 'Roadmap', to: '/roadmap' },
           ],
         },
         {
-          title: 'Support',
+          title: 'ES apps',
           items: [
-            { label: '☕ Buy me a coffee', href: 'https://buymeacoffee.com/edilsonsantos' },
+            { label: 'Portfolio', href: 'https://edilsonsantos.co.za' },
+            { label: 'Blog', href: 'https://blog.edilsonsantos.co.za' },
+            { label: 'Store', href: 'https://store.edilsonsantos.co.za' },
+          ],
+        },
+        {
+          title: 'Connect',
+          items: [
+            { label: 'Contact', href: 'https://edilsonsantos.co.za/contact' },
+            { label: 'GitHub', href: 'https://github.com/edilsonsantos-co-za' },
+            { label: 'Buy me a coffee', href: 'https://buymeacoffee.com/edilsonsantos' },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} ES Developers.`,
+      copyright: `© ${new Date().getFullYear()} Edilson Santos · Backend developer by day. The ES apps are my after-hours side project.`,
     },
     prism: {
       additionalLanguages: ['bash', 'docker'],
