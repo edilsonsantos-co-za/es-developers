@@ -46,7 +46,7 @@ const config = {
         { to: '/guides/development', label: 'Guides', position: 'left' },
         { to: '/roadmap', label: 'Roadmap', position: 'left' },
         // Same order as every ES app: Buy me a coffee, then the launcher
-        { href: 'https://buymeacoffee.com/edilsonsantos', label: '☕ Buy me a coffee', position: 'right', className: 'navbar-coffee', 'aria-label': 'Buy me a coffee' },
+        { href: 'https://buymeacoffee.com/edilsonsantos', label: 'Buy me a coffee', position: 'right', className: 'navbar-coffee', 'aria-label': 'Buy me a coffee' },
         { type: 'html', position: 'right', className: 'navbar-es-apps', value: '<es-apps current="developers"></es-apps>' },
       ],
     },
