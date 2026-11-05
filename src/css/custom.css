@@ -157,3 +157,88 @@ html[data-theme='dark'] .prism-code {
 .ee-embed .ee-tile h1 { color: var(--ee-text); }
 .ee-embed a.ee-btn, .ee-embed a.ee-btn:hover { color: inherit; text-decoration: none; }
 .ee-embed a.ee-btn.primary { color: #fff; }
+
+/* ── ES nav: Island top bar + Bento side nav (picked in es-labs/es-nav, top bar C + side nav C) ── */
+:root {
+  --es-hi: rgb(255 255 255 / 7%);
+  --ifm-navbar-height: 70px;
+}
+
+/* Island: the bar floats off the edges as rounded glass; the page links are lit pills */
+html[data-theme='dark'] .navbar {
+  height: auto;
+  padding: 14px 20px 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.navbar__inner {
+  min-height: 54px;
+  padding: 6px 8px 6px 16px;
+  border-radius: 20px;
+  border: 1px solid color-mix(in srgb, var(--es-accent-2) 14%, var(--es-line));
+  background: color-mix(in srgb, var(--es-card) 72%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 0 20px 40px -24px rgb(0 0 0 / 90%), inset 0 1px 0 var(--es-hi);
+}
+.navbar__brand { margin-right: 16px; }
+.navbar__title { font-weight: 800; letter-spacing: -0.02em; }
+@media (min-width: 997px) {
+  .navbar__items:not(.navbar__items--right) > .navbar__link {
+    margin: 0 1px;
+    padding: 6px 14px;
+    border-radius: 10px;
+    color: var(--es-muted);
+    font-weight: 700;
+    font-size: 14px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .navbar__items:not(.navbar__items--right) > .navbar__link:hover { color: var(--es-text); }
+  .navbar__items:not(.navbar__items--right) > .navbar__link--active,
+  .navbar__items:not(.navbar__items--right) > .navbar__link--active:hover {
+    color: #fff;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--es-accent) 90%, #fff 10%), var(--es-accent));
+    box-shadow: 0 6px 18px -6px var(--es-accent), inset 0 1px 0 rgb(255 255 255 / 30%);
+  }
+}
+
+/* Bento: a soft panel holding each section as its own card, the current page a lit tile */
+html[data-theme='dark'] .theme-doc-sidebar-container {
+  background: color-mix(in srgb, var(--es-bg) 60%, var(--es-card));
+}
+.theme-doc-sidebar-container nav.menu { padding: 12px; }
+.theme-doc-sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.theme-doc-sidebar-menu > .menu__list-item { margin-top: 0 !important; }
+.theme-doc-sidebar-item-category-level-1 {
+  padding: 4px 6px 6px;
+  background: var(--es-card);
+  border: 1px solid var(--es-line);
+  border-radius: 18px;
+  box-shadow: inset 0 1px 0 var(--es-hi);
+}
+/* A section's title reads as the card's mono label */
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link {
+  padding: 8px 10px 6px;
+  font: 500 11px/1.4 'JetBrains Mono', ui-monospace, monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--es-muted);
+}
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible,
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible:hover,
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link { background: none; }
+.theme-doc-sidebar-item-category-level-1 > .menu__list { padding-left: 0; }
+.theme-doc-sidebar-menu .menu__link { border-radius: 12px; font-weight: 600; }
+.theme-doc-sidebar-menu .menu__link--active:not(.menu__link--sublist) {
+  color: #fff;
+  background: radial-gradient(120% 140% at 100% 0%, color-mix(in srgb, var(--es-accent-2) 40%, transparent), transparent 60%), var(--es-accent);
+  box-shadow: 0 10px 24px -12px var(--es-accent), inset 0 1px 0 rgb(255 255 255 / 30%);
+}
+@media (max-width: 996px) {
+  html[data-theme='dark'] .navbar { padding: 10px 12px 0; }
+}
