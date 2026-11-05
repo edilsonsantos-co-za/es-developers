@@ -40,10 +40,10 @@ const config = {
     navbar: {
       title: 'ES Developers',
       items: [
-        { to: '/', label: 'Overview', position: 'left', activeBaseRegex: '^/$' },
+        { to: '/', label: 'Overview', position: 'left' },
         { to: '/apps/es-portfolio', label: 'Portfolio', position: 'left' },
         { to: '/apps/es-blog', label: 'Blog', position: 'left' },
-        { to: '/guides/development', label: 'Guides', position: 'left', activeBasePath: '/guides' },
+        { to: '/guides/development', label: 'Guides', position: 'left' },
         { to: '/roadmap', label: 'Roadmap', position: 'left' },
         // Same order as every ES app: Buy me a coffee, then the launcher
         { href: 'https://buymeacoffee.com/edilsonsantos', label: 'Buy me a coffee', position: 'right', className: 'navbar-coffee', 'aria-label': 'Buy me a coffee' },
