@@ -30,8 +30,7 @@ The ES apps are self-hosted PHP apps that share one design (Atlas), one sign-in 
 - [Sign-in with Logto](./guides/sign-in-with-logto)
 - [Roadmap](./roadmap)
 
-All source code is on GitHub at **[github.com/edilsonsantos-co-za](https://github.com/edilsonsantos-co-za)**.
-Every page here has an "Edit this page" link to its source, and corrections are welcome.
+The ES apps live on GitHub at **[github.com/edilsonsantos-co-za](https://github.com/edilsonsantos-co-za)**.
 
 Some source repositories may be private. A link to a repository does not imply public access or a public release.
 Application access, external provider accounts, runtime availability and domain configuration must be confirmed

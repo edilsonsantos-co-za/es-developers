@@ -20,7 +20,6 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-          editUrl: 'https://github.com/edilsonsantos-co-za/es-developers/edit/main/',
         },
         blog: false,
         theme: {

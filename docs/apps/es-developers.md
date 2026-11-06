@@ -8,7 +8,7 @@ title: ES Developers
 ES Developers is this site: the public documentation for the ES apps, live at
 **[developers.edilsonsantos.co.za](https://developers.edilsonsantos.co.za/)**.
 
-**Source:** [edilsonsantos-co-za/es-developers](https://github.com/edilsonsantos-co-za/es-developers).
+**Source:** [edilsonsantos-co-za/es-developers](https://github.com/edilsonsantos-co-za/es-developers) (repository access may be required).
 
 ## Stack
 
