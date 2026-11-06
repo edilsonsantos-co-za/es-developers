@@ -11,16 +11,23 @@ develop, extend and publish the projects without exposing private workspace note
 
 ## Apps
 
-- [ES Portfolio](./apps/es-portfolio) — Laravel portfolio site with a React administration panel and Blade themes.
-- [ES Blog](./apps/es-blog) — Symfony publishing application, maintained as a separate project.
-- [ES Journal](./apps/es-journal) — private journaling application. Its content and operational details are deliberately not published here.
-- [ES Labs](./apps/es-labs) — an experiments space, not a catalogue of supported production applications.
+The ES apps are self-hosted PHP apps that share one design (Atlas), one sign-in (Logto) and the ES apps launcher.
+
+| App | What it is | Status |
+|---|---|---|
+| [ES Portfolio](./apps/es-portfolio) | Laravel portfolio site with a React administration panel and Blade themes | Live |
+| [ES Blog](./apps/es-blog) | Symfony publishing workspace with scheduled posts, newsletters and social sharing | Live |
+| [ES Store](./apps/es-store) | Sylius theme store: free and premium themes and theme packs for the ES apps | Coming soon |
+| [ES Developers](./apps/es-developers) | This documentation site | Live |
+| [ES Journal](./apps/es-journal) | Private journaling app; its content is never published | Private |
+| [ES Labs](./apps/es-labs) | Design and UI experiments for the ES apps | Private |
 
 ## Start here
 
 - [Development and installation](./guides/development)
 - [Architecture and extension points](./guides/architecture-and-extension)
 - [Publishing, versions and contributions](./guides/publishing-and-releases)
+- [Sign-in with Logto](./guides/sign-in-with-logto)
 - [Roadmap](./roadmap)
 
 The source repositories may be private. A link to a repository does not imply public access or a public release.

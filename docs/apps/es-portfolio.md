@@ -50,14 +50,12 @@ by the relevant application configuration; do not assume an app is publicly acce
 shown.
 
 The Atlas contact section can show optional Upwork and Support links using `UPWORK_URL` and `SUPPORT_URL`.
-Each must be a complete `http://` or `https://` URL; unset or invalid values are hidden. No profile or support
-account is assumed by default.
+Each must be a complete `http://` or `https://` URL; unset or invalid values are hidden. `COFFEE_URL` adds a
+Buy Me a Coffee button to the header and footer; leave it blank to hide them.
 
 ## Extending themes
 
-Atlas is built in. Other themes can be installed from a configured theme catalogue or uploaded as ZIP packages.
-Catalogue availability and publication status must be confirmed separately; this documentation does not announce
-an ES Marketplace launch. Theme packages are executable templates: only install packages from a trusted source.
+Atlas is built in. Other themes come from the [ES Store](./es-store) catalogue or are uploaded as ZIP packages. Theme packages are executable templates: only install packages from a trusted source.
 The installer verifies signed manifests, file hashes, allowed paths and app/version constraints; unsigned
 packages are rejected by default. Installed themes persist under application storage, not under the source tree.
 

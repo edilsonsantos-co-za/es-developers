@@ -12,5 +12,6 @@ This roadmap is intentionally small and describes documentation work, not delive
 - Add release and migration notes after application owners confirm their publication process.
 - Review every page for private data and license accuracy before adding detail about private applications.
 
-Potential additions depend on repository access and confirmed publishing infrastructure. No marketplace,
-production deployment or account integration is announced here as live.
+- Document ES Store purchasing, licence keys and downloads when checkout opens.
+
+Potential additions depend on repository access and confirmed publishing infrastructure.

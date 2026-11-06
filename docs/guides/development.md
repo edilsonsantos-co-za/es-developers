@@ -7,10 +7,10 @@ title: Development
 
 ## Requirements
 
-For this documentation site: Node.js 20.20.x and npm 10. For application development: Git and Docker with
+For this documentation site: Node.js 22 and npm 10. For application development: Git and Docker with
 Compose, plus access to the corresponding source repository and any services it depends on.
 
-ES Portfolio and ES Blog source repositories may be private. Request authorized access before cloning; do not
+Some ES source repositories may be private. Request authorized access before cloning; do not
 copy credentials or environment files from another machine.
 
 ## Run this site locally
@@ -35,6 +35,7 @@ rather than trying to run all apps as one stack:
 
 - [ES Portfolio](../apps/es-portfolio)
 - [ES Blog](../apps/es-blog)
+- [ES Store](../apps/es-store)
 
 Their Compose files use shared services and an external Docker network. Local hostnames, reverse-proxy routes,
 database services and provider credentials must be configured for the developer's environment. Keep local

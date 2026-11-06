@@ -5,7 +5,7 @@ title: Sign-in with Logto
 
 # Sign-in with Logto
 
-ES Portfolio, ES Blog and ES Journal sign in through [Logto](https://logto.io/), an open-source identity service.
+ES Portfolio, ES Blog, ES Store and ES Journal sign in through [Logto](https://logto.io/), an open-source identity service.
 Running one of them yourself needs a Logto instance, and running several against the same instance gives you
 single sign-on across them.
 
@@ -24,6 +24,7 @@ In the Logto console, create one **Traditional web** application per app:
 |---|---|---|
 | ES Portfolio | `<site>/auth/sso/callback` | `<site>/` |
 | ES Blog | `<site>/login/sso/callback` | `<site>/` |
+| ES Store | `<site>/login/sso/callback` | `<site>/` |
 | ES Journal | `<site>/auth/sso/callback` | `<site>/` |
 
 Copy each application's endpoint, app ID and app secret into that app's environment file:
@@ -37,7 +38,7 @@ LOGTO_APP_SECRET=...
 
 ## The owner role
 
-The admin areas (Portfolio admin, Blog admin, Journal) only let in users who hold the Logto role **`es-owner`**.
+The admin areas (Portfolio admin, Blog admin, Store admin, Journal) only let in users who hold the Logto role **`es-owner`**.
 The apps ask for the `roles` scope to read it. In the Logto console, go to **Authorization → Roles**, create
 `es-owner` and assign it to your user.
 
@@ -45,7 +46,8 @@ The apps ask for the `roles` scope to read it. In the Logto console, go to **Aut
 
 Logto proves who you are, and each app decides what you can do. The verified email on your Logto account must match
 an existing account in the app: the portfolio admin, a blog user created with `app:user:create`, or a journal user.
-The apps never create accounts from a sign-in.
+These apps never create accounts from a sign-in. ES Store is the exception: a first sign-in creates a customer
+account, and a first sign-in with the `es-owner` role creates the store admin.
 
 ## Signing out
 

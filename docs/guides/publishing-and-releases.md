@@ -16,16 +16,14 @@ docker compose up -d --build
 ```
 
 The Compose service does not publish a host port. A reverse proxy must route the intended hostname to
-`es-developers:80` on `milkyway`, and DNS/TLS must be configured for that hostname. The deployment target,
-DNS record, proxy route, SSH account and GitHub deployment credentials have not been verified by this project;
-the absolute hostname in the Docusaurus config is a target, not a claim that the site is live. A successful
-production TLS check has not been confirmed.
+`es-developers:80` on `milkyway`, and DNS/TLS must be configured for that hostname. The site is live at
+[developers.edilsonsantos.co.za](https://developers.edilsonsantos.co.za/) over HTTPS.
 
 For a manual static publish, run `npm ci && npm run build`, then copy the contents of `build/` to a static web
 root that serves directory index files and the generated `404.html`. Preserve the configured base path `/`.
 
-No automatic production deployment workflow is included. Add one only after the actual host, destination path,
-proxy/DNS setup and authorized deployment credentials are confirmed.
+GitHub Actions builds every push to `main` and every pull request, and uploads the built site as an artifact.
+Deployment to production is still manual: ship the reviewed source to the host and rebuild the container.
 
 ## Versioning
 
