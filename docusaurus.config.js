@@ -20,6 +20,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
+          editUrl: 'https://github.com/edilsonsantos-co-za/es-developers/edit/main/',
         },
         blog: false,
         theme: {
@@ -43,8 +44,10 @@ const config = {
         { to: '/', label: 'Overview', position: 'left' },
         { to: '/apps/es-portfolio', label: 'Portfolio', position: 'left' },
         { to: '/apps/es-blog', label: 'Blog', position: 'left' },
+        { to: '/apps/es-store', label: 'Store', position: 'left' },
         { to: '/guides/development', label: 'Guides', position: 'left' },
         { to: '/roadmap', label: 'Roadmap', position: 'left' },
+        { href: 'https://github.com/edilsonsantos-co-za', position: 'right', className: 'navbar-github', 'aria-label': 'GitHub' },
         // Same order as every ES app: Buy me a coffee, then the launcher
         { href: 'https://buymeacoffee.com/edilsonsantos', label: 'Buy me a coffee', position: 'right', className: 'navbar-coffee', 'aria-label': 'Buy me a coffee' },
         { type: 'html', position: 'right', className: 'navbar-es-apps', value: '<es-apps current="developers"></es-apps>' },
