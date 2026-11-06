@@ -131,6 +131,15 @@ html[data-theme='dark'] .prism-code {
   display: none;
 }
 
+/* Brand: same block as the other ES apps (mark, bold name, small mono subtitle) */
+.navbar-es-brand { display: flex; align-items: center; margin-right: 12px; }
+.es-brand { display: flex; align-items: center; gap: 10px; color: var(--ifm-navbar-link-color); text-decoration: none; }
+.es-brand:hover { color: var(--ifm-navbar-link-color); text-decoration: none; }
+.es-brand-logo { width: 36px; height: 36px; border-radius: 10px; display: block; }
+.es-brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.es-brand-text b { font-weight: 800; letter-spacing: -.02em; color: #fff; }
+.es-brand-text small { font-family: var(--ifm-font-family-monospace); font-size: 10px; color: #94a3b8; }
+
 /* GitHub: an icon link before the coffee button, in the muted text colour */
 .navbar-github {
   display: inline-flex;

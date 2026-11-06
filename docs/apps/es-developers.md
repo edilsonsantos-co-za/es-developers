@@ -1,11 +1,11 @@
 ---
 sidebar_position: 4
-title: ES Developers
+title: ES Documentation
 ---
 
-# ES Developers
+# ES Documentation
 
-ES Developers is this site: the public documentation for the ES apps, live at
+ES Documentation is this site: the developer documentation for the ES apps, live at
 **[developers.edilsonsantos.co.za](https://developers.edilsonsantos.co.za/)**.
 
 **Source:** [edilsonsantos-co-za/es-developers](https://github.com/edilsonsantos-co-za/es-developers) (repository access may be required).

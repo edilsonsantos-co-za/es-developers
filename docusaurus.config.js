@@ -1,7 +1,7 @@
 // @ts-check
 
 const config = {
-  title: 'ES Developers',
+  title: 'ES Documentation',
   tagline: 'Public documentation for the ES apps.',
   favicon: 'img/favicon.svg',
   url: 'https://developers.edilsonsantos.co.za',
@@ -38,8 +38,9 @@ const config = {
 
   themeConfig: {
     navbar: {
-      title: 'ES Developers',
       items: [
+        // Brand like every ES app: ES mark, name, small mono subtitle
+        { type: 'html', position: 'left', className: 'navbar-es-brand', value: '<a class="es-brand" href="/" aria-label="ES Documentation home"><img class="es-brand-logo" src="/img/es-mark.svg" alt="" width="36" height="36"><span class="es-brand-text"><b>ES Documentation</b><small>For developers</small></span></a>' },
         { to: '/', label: 'Overview', position: 'left' },
         { to: '/apps/es-portfolio', label: 'Portfolio', position: 'left' },
         { to: '/apps/es-blog', label: 'Blog', position: 'left' },
@@ -57,7 +58,7 @@ const config = {
       style: 'dark',
       links: [
         {
-          title: 'Developers',
+          title: 'Documentation',
           items: [
             { label: 'Overview', to: '/' },
             { label: 'Development guide', to: '/guides/development' },

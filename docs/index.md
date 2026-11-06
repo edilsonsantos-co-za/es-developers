@@ -1,12 +1,12 @@
 ---
 slug: /
 sidebar_position: 1
-title: ES Developers
+title: ES Documentation
 ---
 
-# ES Developers
+# ES Documentation
 
-Public, curated developer documentation for the ES applications. This site describes how to understand,
+The documentation website for the ES apps, written for developers. This site describes how to understand,
 develop, extend and publish the projects without exposing private workspace notes, credentials or user data.
 
 ## Apps
@@ -18,7 +18,7 @@ The ES apps are self-hosted PHP apps that share one design (Atlas), one sign-in 
 | [ES Portfolio](./apps/es-portfolio) | Laravel portfolio site with a React administration panel and Blade themes | Live |
 | [ES Blog](./apps/es-blog) | Symfony publishing workspace with scheduled posts, newsletters and social sharing | Live |
 | [ES Store](./apps/es-store) | Sylius theme store: free and premium themes and theme packs for the ES apps | Coming soon |
-| [ES Developers](./apps/es-developers) | This documentation site | Live |
+| [ES Documentation](./apps/es-developers) | This site: developer documentation for the ES apps | Live |
 | [ES Journal](./apps/es-journal) | Private journaling app; its content is never published | Private |
 | [ES Labs](./apps/es-labs) | Design and UI experiments for the ES apps | Private |
 

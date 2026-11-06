@@ -13,7 +13,7 @@ does not ingest internal workspace documentation or application runtime data.
 
 ## Application boundaries
 
-ES Portfolio, ES Blog, ES Store and ES Developers are independent applications with separate repositories,
+ES Portfolio, ES Blog, ES Store and ES Documentation are independent applications with separate repositories,
 runtime dependencies, config and release flows. The shared app launcher and Logto sign-in connect them; they do
 not share a runtime or a database. ES Store supplies themes to the Portfolio and Blog as signed packages.
 ES Journal remains private; ES Labs contains prototypes and is not an implicit production dependency.
