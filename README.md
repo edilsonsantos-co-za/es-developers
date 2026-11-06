@@ -22,7 +22,8 @@ The curated site is live at **https://developers.edilsonsantos.co.za/**. All nin
 HTTPS on 2026-11-02. The production image serves static files with Nginx 1.28; Node 22 is used only during build.
 GitHub Actions validates `main`/pull requests and uploads the built site as an artifact.
 
-Deployment is currently manual, not triggered by CI. Ship the reviewed committed source to your host, then run:
+Every push to `main` deploys (`.github/workflows/deploy.yml`): the workflow ships the committed files to the VPS
+and rebuilds the image there. To redeploy by hand on the server:
 
 ```bash
 docker compose build developers
@@ -31,8 +32,7 @@ docker exec es-developers wget -qO- http://127.0.0.1/
 ```
 
 The hosted instance uses its own HTTPS reverse-proxy host and certificate on the external `milkyway` network.
-Preserve unrelated apps and volumes. An authenticated automatic-deployment workflow remains a follow-up; do not
-copy deployment credentials into documentation or source.
+Preserve unrelated apps and volumes, and never copy deployment credentials into documentation or source.
 
 ## Dependency baseline
 

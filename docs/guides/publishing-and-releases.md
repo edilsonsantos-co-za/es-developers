@@ -22,8 +22,8 @@ The Compose service does not publish a host port. A reverse proxy must route the
 For a manual static publish, run `npm ci && npm run build`, then copy the contents of `build/` to a static web
 root that serves directory index files and the generated `404.html`. Preserve the configured base path `/`.
 
-GitHub Actions builds every push to `main` and every pull request, and uploads the built site as an artifact.
-Deployment to production is still manual: ship the reviewed source to the host and rebuild the container.
+GitHub Actions validates every push to `main` and every pull request. Every push to `main` also deploys: the
+workflow copies the committed files to the server and rebuilds the container there.
 
 ## Versioning
 
