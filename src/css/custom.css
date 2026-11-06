@@ -191,3 +191,10 @@ html[data-theme='dark'] .prism-code {
 .ee-embed .ee-tile h1 { color: var(--ee-text); }
 .ee-embed a.ee-btn, .ee-embed a.ee-btn:hover { color: inherit; text-decoration: none; }
 .ee-embed a.ee-btn.primary { color: #fff; }
+
+/* Footer Connect: icon buttons instead of words, as in every ES app's footer (the name is in aria-label and title) */
+.footer__items:has(.es-connect) { display: flex; flex-wrap: wrap; gap: 8px; }
+.footer__items:has(.es-connect) .footer__item { margin: 0; }
+.footer__link-item.es-connect { display: grid; place-items: center; width: 38px; height: 38px; box-sizing: border-box; border: 1px solid var(--es-line); border-radius: 12px; color: var(--es-text); transition: color .2s, border-color .2s; }
+.footer__link-item.es-connect:hover, .footer__link-item.es-connect:focus-visible { color: var(--es-accent-2); border-color: color-mix(in srgb, var(--es-accent-2) 50%, var(--es-line)); text-decoration: none; }
+.footer__link-item.es-connect svg { width: 18px; height: 18px; fill: currentColor; }
