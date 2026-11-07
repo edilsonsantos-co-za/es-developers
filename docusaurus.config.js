@@ -54,9 +54,17 @@ const config = {
         // Brand like every ES app: ES mark, name, small mono subtitle
         { type: 'html', position: 'left', className: 'navbar-es-brand', value: '<a class="es-brand" href="/" aria-label="ES Documentation home"><img class="es-brand-logo" src="/img/es-mark.svg" alt="" width="36" height="36"><span class="es-brand-text"><b>ES Documentation</b><small>For developers</small></span></a>' },
         { to: '/', label: 'Overview', position: 'left' },
-        { to: '/apps/es-portfolio', label: 'Portfolio', position: 'left' },
-        { to: '/apps/es-blog', label: 'Blog', position: 'left' },
-        { to: '/apps/es-store', label: 'Store', position: 'left' },
+        // Every ES app with docs, in the sidebar's order
+        {
+          type: 'dropdown', label: 'Apps', position: 'left', items: [
+            { to: '/apps/es-portfolio', label: 'Portfolio' },
+            { to: '/apps/es-blog', label: 'Blog' },
+            { to: '/apps/es-store', label: 'Store' },
+            { to: '/apps/es-developers', label: 'Developers' },
+            { to: '/apps/es-journal', label: 'Journal' },
+            { to: '/apps/es-labs', label: 'Labs' },
+          ],
+        },
         { to: '/guides/development', label: 'Guides', position: 'left' },
         { to: '/roadmap', label: 'Roadmap', position: 'left' },
         { href: 'https://github.com/edilsonsantos-co-za', position: 'right', className: 'navbar-github', 'aria-label': 'GitHub' },
@@ -65,7 +73,7 @@ const config = {
         { type: 'html', position: 'right', className: 'navbar-es-apps', value: '<es-apps current="developers"></es-apps>' },
         // Phones and tablets: the app-style bottom tab bar every ES app shares (es-apps.js moves it to the end of <body>);
         // it replaces the ☰ toggle, and More opens the docs sidebar
-        { type: 'html', position: 'right', className: 'navbar-es-tabbar', value: '<es-tabbar hide=".navbar__toggle, .navbar__items:not(.navbar__items--right) > a.navbar__link" more-button=".navbar__toggle">'
+        { type: 'html', position: 'right', className: 'navbar-es-tabbar', value: '<es-tabbar hide=".navbar__toggle, .navbar__items:not(.navbar__items--right) > a.navbar__link, .navbar__items:not(.navbar__items--right) > .dropdown" more-button=".navbar__toggle">'
           + '<a href="/" data-icon="home">Overview</a><a href="/apps/es-portfolio" data-icon="apps" data-match="/apps/">Apps</a>'
           + '<a href="/guides/development" data-icon="guides" data-match="/guides/">Guides</a><a href="/roadmap" data-icon="roadmap">Roadmap</a></es-tabbar>' },
       ],
