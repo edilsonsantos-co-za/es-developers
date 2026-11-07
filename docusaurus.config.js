@@ -61,6 +61,11 @@ const config = {
         // Same order as every ES app: Buy me a coffee, then the launcher
         { href: 'https://buymeacoffee.com/edilsonsantos', label: 'Buy me a coffee', position: 'right', className: 'navbar-coffee', 'aria-label': 'Buy me a coffee' },
         { type: 'html', position: 'right', className: 'navbar-es-apps', value: '<es-apps current="developers"></es-apps>' },
+        // Phones and tablets: the app-style bottom tab bar every ES app shares (es-apps.js moves it to the end of <body>);
+        // it replaces the ☰ toggle, and More opens the docs sidebar
+        { type: 'html', position: 'right', className: 'navbar-es-tabbar', value: '<es-tabbar hide=".navbar__toggle, .navbar__items > a.navbar__link" more-button=".navbar__toggle">'
+          + '<a href="/" data-icon="home">Overview</a><a href="/apps/es-portfolio" data-icon="apps" data-match="/apps/">Apps</a>'
+          + '<a href="/guides/development" data-icon="guides" data-match="/guides/">Guides</a><a href="/roadmap" data-icon="roadmap">Roadmap</a></es-tabbar>' },
       ],
     },
     // Same three columns as every ES app's footer: this app, the ES apps, connect
