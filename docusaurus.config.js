@@ -40,6 +40,8 @@ const config = {
   ],
 
   stylesheets: [
+    // es-boot.css: the splash shown while a page is still arriving; first, so it applies before anything paints
+    '/es-boot.css',
     'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Manrope:wght@500;600;700;800&display=swap',
   ],
 
