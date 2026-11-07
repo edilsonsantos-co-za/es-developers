@@ -63,7 +63,7 @@ const config = {
         { type: 'html', position: 'right', className: 'navbar-es-apps', value: '<es-apps current="developers"></es-apps>' },
         // Phones and tablets: the app-style bottom tab bar every ES app shares (es-apps.js moves it to the end of <body>);
         // it replaces the ☰ toggle, and More opens the docs sidebar
-        { type: 'html', position: 'right', className: 'navbar-es-tabbar', value: '<es-tabbar hide=".navbar__toggle, .navbar__items > a.navbar__link" more-button=".navbar__toggle">'
+        { type: 'html', position: 'right', className: 'navbar-es-tabbar', value: '<es-tabbar hide=".navbar__toggle, .navbar__items:not(.navbar__items--right) > a.navbar__link" more-button=".navbar__toggle">'
           + '<a href="/" data-icon="home">Overview</a><a href="/apps/es-portfolio" data-icon="apps" data-match="/apps/">Apps</a>'
           + '<a href="/guides/development" data-icon="guides" data-match="/guides/">Guides</a><a href="/roadmap" data-icon="roadmap">Roadmap</a></es-tabbar>' },
       ],

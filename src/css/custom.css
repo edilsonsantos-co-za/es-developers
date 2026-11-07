@@ -192,10 +192,17 @@ html[data-theme='dark'] .prism-code {
     margin-right: 0;
     vertical-align: 0;
   }
+
+  /* The ES brand (logo, name, subtitle) stays top left like every ES app; the page links are in the bottom tab bar */
+  .navbar .navbar__items .navbar-es-brand {
+    display: flex;
+  }
 }
 
 .navbar-sidebar .navbar-es-apps,
-.navbar-sidebar .navbar-coffee {
+.navbar-sidebar .navbar-coffee,
+.navbar-sidebar .navbar-es-brand,
+.navbar-sidebar .navbar-es-tabbar {
   display: none;
 }
 
