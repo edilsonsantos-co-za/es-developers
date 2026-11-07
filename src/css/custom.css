@@ -179,9 +179,23 @@ html[data-theme='dark'] .prism-code {
   .navbar .navbar__items--right .navbar-es-apps {
     display: inline-flex;
   }
+
+  /* Buy me a coffee stays in the bar too, as an icon-only button like the other ES apps on small screens */
+  .navbar .navbar__items--right .navbar-coffee {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 9px;
+    font-size: 0;
+  }
+
+  .navbar .navbar__items--right .navbar-coffee::before {
+    margin-right: 0;
+    vertical-align: 0;
+  }
 }
 
-.navbar-sidebar .navbar-es-apps {
+.navbar-sidebar .navbar-es-apps,
+.navbar-sidebar .navbar-coffee {
   display: none;
 }
 
