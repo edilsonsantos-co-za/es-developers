@@ -1,6 +1,7 @@
 {
   "name": "es-developers",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "description": "Public developer documentation for the ES apps.",
   "engines": {
