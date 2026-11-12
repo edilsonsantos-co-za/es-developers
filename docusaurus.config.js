@@ -45,8 +45,9 @@ const config = {
     'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Manrope:wght@500;600;700;800&display=swap',
   ],
 
-  // The shared ES app launcher (<es-apps>); copy of es-marketplace/store/assets/es-apps.js
-  scripts: [{ src: '/es-apps.js', defer: true }],
+  // The shared ES app launcher (<es-apps>); copy of es-marketplace/store/assets/es-apps.js.
+  // Loaded after hydration by a client module: as a plain <script> it changed the HTML before React hydrated (double render).
+  clientModules: ['./src/clientModules/es-apps.js'],
 
   themeConfig: {
     navbar: {
