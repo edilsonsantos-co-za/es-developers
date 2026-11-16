@@ -23,6 +23,11 @@ spec:
           image: es-developers          # tag set per deploy (kustomize `images`)
           imagePullPolicy: IfNotPresent # on k3s the image is imported, not pulled
           ports: [{name: http, containerPort: 80}]
+          # Keep serving for a few seconds after Kubernetes decides to stop this copy: Traefik needs a
+          # moment to learn it is gone, and without the pause a request can land on a closed pod.
+          lifecycle:
+            preStop:
+              exec: {command: ["sleep", "8"]}
           readinessProbe:
             httpGet: {path: /, port: http}
             periodSeconds: 5
