@@ -1,0 +1,10 @@
+# ES Developers on Kubernetes. Applied by the deploy workflow through
+# /usr/local/lib/workspace/deploy-k3s.sh (source: workspace config, kubernetes/scripts/deploy-k3s.sh),
+# which sets the image tag to the commit being deployed. See docs in README.md, "Deployment".
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: apps
+resources:
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml

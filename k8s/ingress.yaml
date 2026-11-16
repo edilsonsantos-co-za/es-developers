@@ -1,0 +1,16 @@
+# Routes the public hostname to the Service. On the VPS, Nginx Proxy Manager still terminates
+# HTTPS and forwards to Traefik (the cluster's entry point); on AWS, Traefik gets the traffic directly.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: es-developers
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: developers.edilsonsantos.co.za
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: {name: es-developers, port: {name: http}}

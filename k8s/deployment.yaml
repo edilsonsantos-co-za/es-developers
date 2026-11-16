@@ -1,0 +1,35 @@
+# Two copies of the site. Kubernetes replaces them one at a time on a deploy and only sends
+# traffic to a copy that answers its readiness check, so a deploy has no downtime and a bad
+# build never receives visitors.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: es-developers
+  labels: {app: es-developers}
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: {maxUnavailable: 0, maxSurge: 1}
+  selector:
+    matchLabels: {app: es-developers}
+  template:
+    metadata:
+      labels: {app: es-developers}
+    spec:
+      containers:
+        - name: web
+          image: es-developers          # tag set per deploy (kustomize `images`)
+          imagePullPolicy: IfNotPresent # on k3s the image is imported, not pulled
+          ports: [{name: http, containerPort: 80}]
+          readinessProbe:
+            httpGet: {path: /, port: http}
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: {path: /, port: http}
+            periodSeconds: 30
+            timeoutSeconds: 5
+          resources:
+            requests: {cpu: 10m, memory: 16Mi}
+            limits: {memory: 64Mi}

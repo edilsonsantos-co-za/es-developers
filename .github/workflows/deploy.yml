@@ -24,7 +24,6 @@ jobs:
     environment: production
     env:
       APP_DIR: /workspace/edilsonsantos-co-za/es-developers
-      COMPOSE_FILE: docker-compose.yml
       REQUIRED_ENV_FILES: ""
 
     steps:
@@ -95,15 +94,18 @@ jobs:
           fi
           REMOTE
 
-      - name: Build and start on the VPS
+      # Kubernetes (k3s on the VPS) since 16 Nov 2026: build the image, roll it out one copy at a
+      # time, check the site through the cluster, and go back to the previous version on failure.
+      # The script comes from the workspace config repo (kubernetes/scripts/deploy-k3s.sh).
+      - name: Build and roll out on the cluster
         run: |
-          ssh vps "$REMOTE_SUDO env APP_DIR='$APP_DIR' COMPOSE_FILE='$COMPOSE_FILE' bash -s" <<'REMOTE'
+          ssh vps "$REMOTE_SUDO env APP_DIR='$APP_DIR' TAG='${GITHUB_SHA::12}' bash -s" <<'REMOTE'
           set -euo pipefail
           cd "$APP_DIR"
-          if ! docker compose -f "$COMPOSE_FILE" up -d --build --remove-orphans --wait --wait-timeout 120; then
-            docker compose -f "$COMPOSE_FILE" ps
-            docker compose -f "$COMPOSE_FILE" logs --tail 80
-            exit 1
-          fi
-          docker compose -f "$COMPOSE_FILE" ps
+          bash /usr/local/lib/workspace/deploy-k3s.sh es-developers "$TAG" --host developers.edilsonsantos.co.za
           REMOTE
+
+      - name: Check the public site
+        run: |
+          curl --fail --silent --show-error --output /dev/null --retry 5 --retry-delay 3 --retry-all-errors \
+            --max-time 20 https://developers.edilsonsantos.co.za/
